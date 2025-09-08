@@ -34,7 +34,7 @@ Section:NewButton("Load", "Activate", function()
         elseif game.placeId == 6403373529 then
             loadstring(game:HttpGet("https://raw.githubusercontent.com/yyeptech/thebighubs/refs/heads/main/slapbattles.luau"))()
         elseif game.placeId == 11520107397 then
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/yyeptech/thebighubs/refs/heads/main/ksonly.luau"))()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/xxxrrxsds-art/losehubs/refs/heads/main/ksonly.lua"))()
         elseif game.placeId == 124596094333302 then
             loadstring(game:HttpGet("https://raw.githubusercontent.com/yyeptech/thebighubs/refs/heads/main/slapbattles.luau"))()
         end
