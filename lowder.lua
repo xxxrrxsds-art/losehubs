@@ -17,11 +17,11 @@ Section:NewButton("Load", "Activate", function()
         elseif game.placeId == 1537690962 then
             loadstring(game:HttpGet("https://raw.githubusercontent.com/xxxrrxsds-art/losehubs/refs/heads/main/bssfree.lua"))()
 		elseif game.placeId == 6403373529 then
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/yyeptech/thebighubs/refs/heads/main/slapfree.luau"))()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/xxxrrxsds-art/losehubs/refs/heads/main/slapfree.lua"))()
         elseif game.placeId == 11520107397 then
             loadstring(game:HttpGet("https://raw.githubusercontent.com/xxxrrxsds-art/losehubs/refs/heads/main/ksfree.lua"))()
         elseif game.placeId == 124596094333302 then
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/yyeptech/thebighubs/refs/heads/main/slapfree.luau"))()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/xxxrrxsds-art/losehubs/refs/heads/main/slapfree.lua"))()
         else
             game.Players.LocalPlayer:Kick("Invalid Game.")
         end
@@ -32,11 +32,11 @@ Section:NewButton("Load", "Activate", function()
         elseif game.placeId == 1537690962 then
             loadstring(game:HttpGet("https://raw.githubusercontent.com/xxxrrxsds-art/losehubs/refs/heads/main/BSSBeta.lua"))()
         elseif game.placeId == 6403373529 then
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/yyeptech/thebighubs/refs/heads/main/slapbattles.luau"))()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/xxxrrxsds-art/losehubs/refs/heads/main/slapea.lua"))()
         elseif game.placeId == 11520107397 then
             loadstring(game:HttpGet("https://raw.githubusercontent.com/xxxrrxsds-art/losehubs/refs/heads/main/ksonly.lua"))()
         elseif game.placeId == 124596094333302 then
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/yyeptech/thebighubs/refs/heads/main/slapbattles.luau"))()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/xxxrrxsds-art/losehubs/refs/heads/main/slapea.lua"))()
         end
          
     else
