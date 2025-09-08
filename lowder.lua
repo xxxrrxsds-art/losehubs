@@ -15,11 +15,11 @@ Section:NewButton("Load", "Activate", function()
         if game.placeId == 4924922222 then
             loadstring(game:HttpGet("https://raw.githubusercontent.com/xxxrrxsds-art/losehubs/refs/heads/main/brbrhaven.lua"))()
         elseif game.placeId == 1537690962 then
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/yyeptech/thebighubs/refs/heads/main/bss.luau"))()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/xxxrrxsds-art/losehubs/refs/heads/main/bssfree.lua"))()
 		elseif game.placeId == 6403373529 then
             loadstring(game:HttpGet("https://raw.githubusercontent.com/yyeptech/thebighubs/refs/heads/main/slapfree.luau"))()
         elseif game.placeId == 11520107397 then
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/yyeptech/thebighubs/refs/heads/main/ksfree.luau"))()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/xxxrrxsds-art/losehubs/refs/heads/main/ksfree.lua"))()
         elseif game.placeId == 124596094333302 then
             loadstring(game:HttpGet("https://raw.githubusercontent.com/yyeptech/thebighubs/refs/heads/main/slapfree.luau"))()
         else
