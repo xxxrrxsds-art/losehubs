@@ -13,7 +13,7 @@ Section:NewButton("Load", "Activate", function()
     if getgenv().invitecode == "useexecfree" then
         status:UpdateLabel("Loading...")
         if game.placeId == 4924922222 then
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/yyeptech/thebighubs/refs/heads/main/brohaven.luau"))()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/xxxrrxsds-art/losehubs/refs/heads/main/brbrhaven.lua"))()
         elseif game.placeId == 1537690962 then
             loadstring(game:HttpGet("https://raw.githubusercontent.com/yyeptech/thebighubs/refs/heads/main/bss.luau"))()
 		elseif game.placeId == 6403373529 then
@@ -28,7 +28,7 @@ Section:NewButton("Load", "Activate", function()
     elseif getgenv().invitecode == currentkey then
         status:UpdateLabel("Loading...")
         if game.placeId == 4924922222 then
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/yyeptech/thebighubs/refs/heads/main/brohaven.luau"))()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/xxxrrxsds-art/losehubs/refs/heads/main/brbrhaven.lua"))()
         elseif game.placeId == 1537690962 then
             loadstring(game:HttpGet("https://raw.githubusercontent.com/xxxrrxsds-art/losehubs/refs/heads/main/BSSBeta.lua"))()
         elseif game.placeId == 6403373529 then
