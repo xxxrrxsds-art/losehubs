@@ -196,10 +196,12 @@ sections.MainSection2:Button({
 		anvoid.Position = Vector3.new(barpos.X, -15, barpos.Z)
 		task.wait(0.35)
 		workspace.DEATHBARRIER:Destroy()
+		task.wait()
+		workspace.DEATHBARRIER2:Destroy()
 	end,
 }, "Toggle")
 sections.MainSection4:Toggle({
-	Name = "Auto Collect Slapples",
+	Name = "Auto Collect Slapples"
 	Default = false,
 	Callback = function(value)
         getgenv().aslapples = value
