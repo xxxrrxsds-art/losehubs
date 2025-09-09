@@ -201,7 +201,7 @@ sections.MainSection2:Button({
 	end,
 }, "Toggle")
 sections.MainSection4:Toggle({
-	Name = "Auto Collect Slapples"
+	Name = "Auto Collect Slapples",
 	Default = false,
 	Callback = function(value)
         getgenv().aslapples = value
