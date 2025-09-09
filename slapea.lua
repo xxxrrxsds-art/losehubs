@@ -2,7 +2,7 @@
 local MacLib = loadstring(game:HttpGet("https://github.com/biggaboy212/Maclib/releases/latest/download/maclib.txt"))()
 local Window = MacLib:Window({
 	Title = "Execsense Injected",
-	Subtitle = "Slap Battles V2 [THE FIRST STEP]",
+	Subtitle = "Slap Battles V2 [THE SECOND STEP]",
 	Size = UDim2.fromOffset(890, 625),
 	DragStyle = 1,
 	DisabledWindowControls = {},
@@ -46,7 +46,7 @@ sections.MainSection10:Header({
 	Name = "Admin"
 })
 sections.MainSection11:Header({
-	Name = "Brick"
+	Name = "One Ability"
 })
 
 local plr = game.Players.LocalPlayer
@@ -119,27 +119,46 @@ sections.MainSection1:Toggle({
 }, "Toggle")
 local turning = 0
 sections.MainSection1:Toggle({
-	Name = "Auto Slaps V1 (Dual Glove)",
+	Name = "Auto Slaps V2 (Dual Glove)",
 	Default = false,
 	Callback = function(value)
         getgenv().aslap = value
-		while getgenv().aslap and task.wait() do
+        for _, i in pairs(game.ReplicatedStorage:GetDescendants()) do
+            if i:IsA("RemoteEvent") and string.match(i.Name, "{")then
+                i:FireServer("Dual")
+            end
+        end
+    	if plr.Character.Humanoid and plr.Character.Humanoid.Health == 0 then
+            turning = 1
+        elseif plr.Character.Humanoid and plr.Character.Humanoid.Health == 100 then
+            turning = 0
+        elseif not plr.Character.Humanoid then
+            turning = 1
+        end
+		while getgenv().aslap and task.wait() and turning == 0 do
             plr = game.Players.LocalPlayer
             for _, i in pairs(game.Workspace:GetChildren()) do
-                if game.Players:FindFirstChild(i.Name) then
-                    if getgenv().aslap and turning == 0 then
-                        workspace[plr.Name].HumanoidRootPart.CFrame = CFrame.new(workspace[i.Name].HumanoidRootPart.Position)
-                        task.wait(plr:GetNetworkPing() + 0.2)
-                        game:GetService("ReplicatedStorage"):FindFirstChild("GeneralHit"):FireServer(game.Workspace[i.Name]["Torso"])
-                        task.wait(plr:GetNetworkPing() + 0.2)
-                        CFrame.new(0, 150, 100)
+                if turning == 0 and game.Players:FindFirstChild(i.Name) then
+                    if getgenv().aslap and turning == 0 and workspace[i.Name]:FindFirstChild("isInArena") then
+                        if turning == 0 and workspace[i.Name].isInArena.Value == true and (workspace.DEATHBARRIER.Position - workspace[i.Name].HumanoidRootPart.Position).Magnitude > 35 then
+                            for post = 0, 5 do
+                                task.wait()
+                                workspace[plr.Name].HumanoidRootPart.CFrame = CFrame.new(workspace[i.Name].HumanoidRootPart.Position)
+                            end
+                            task.wait(plr:GetNetworkPing() + 0.2)
+                            game:GetService("ReplicatedStorage"):FindFirstChild("GeneralHit"):FireServer(game.Workspace[i.Name]["Torso"])
+                            task.wait(plr:GetNetworkPing() + 0.2)
+                            CFrame.new(0, 150, 100)
+                        end
                     end
                 end
             end
-            if plr.Character.Humanoid.Health == 0 and turning == 0 then
+            if plr.Character.Humanoid and plr.Character.Humanoid.Health == 0 then
                 turning = 1
-            elseif plr.Character.Humanoid.Health == 100 and turning == 0 then
+            elseif plr.Character.Humanoid and plr.Character.Humanoid.Health == 100 then
                 turning = 0
+            elseif not plr.Character.Humanoid then
+                turning = 1
             end
         end
 	end,
@@ -265,6 +284,16 @@ sections.MainSection11:Toggle({
         getgenv().fbr = value
 		while task.wait() and getgenv().fbr do
             game:GetService("ReplicatedStorage"):WaitForChild("lbrick"):FireServer()
+        end
+	end,
+}, "Toggle")
+sections.MainSection11:Toggle({
+	Name = "Fast Hallow Jack(requires equipped hallow jack glove)",
+	Default = false,
+	Callback = function(value)
+        getgenv().fhj = value
+		while task.wait(4) and getgenv().fhj do
+            game:GetService("ReplicatedStorage"):WaitForChild("Hallow"):FireServer()
         end
 	end,
 }, "Toggle")
