@@ -336,7 +336,7 @@ sections.MainSection8:Label({
 	Text = "Developed by yyep"
 })
 sections.MainSection8:Label({
-	Text = "Total functional: 9 functions"
+	Text = "Total functional: 12 functions"
 })
 if getexecutorname() ~= nil then
     sections.MainSection8:Label({
