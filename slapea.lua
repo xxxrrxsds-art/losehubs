@@ -140,7 +140,7 @@ sections.MainSection1:Toggle({
             for _, i in pairs(game.Workspace:GetChildren()) do
                 if turning == 0 and game.Players:FindFirstChild(i.Name) then
                     if getgenv().aslap and turning == 0 and workspace[i.Name]:FindFirstChild("isInArena") then
-                        if turning == 0 and workspace[i.Name].isInArena.Value == true and (workspace.DEATHBARRIER.Position - workspace[i.Name].HumanoidRootPart.Position).Magnitude > 35 then
+                        if turning == 0 and workspace[i.Name].isInArena.Value == true and (workspace.DEATHBARRIER.Position - workspace[i.Name].HumanoidRootPart.Position).Magnitude > 55 then
                             for post = 0, 5 do
                                 task.wait()
                                 workspace[plr.Name].HumanoidRootPart.CFrame = CFrame.new(workspace[i.Name].HumanoidRootPart.Position)
