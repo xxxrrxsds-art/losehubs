@@ -160,11 +160,6 @@ sections.MainSection1:Toggle({
             elseif not plr.Character.Humanoid then
                 turning = 1
             end
-            
-            
-            if workspace.DEATHBARRIER then
-                workspace.DEATHBARRIER:Destroy()
-            end
         end
 	end,
 }, "Toggle")
@@ -201,6 +196,8 @@ sections.MainSection2:Button({
 		anvoid.Anchored = true
 		anvoid.Size = Vector3.new(1000000, 10, 1000000)
 		anvoid.Position = Vector3.new(barpos.X, -15, barpos.Z)
+		task.wait(0.35)
+		workspace.DEATHBARRIER:Destroy()
 	end,
 }, "Toggle")
 sections.MainSection4:Toggle({
