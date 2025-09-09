@@ -25,7 +25,7 @@ local sections = {
     MainSection8 = tabs.Info:Section({ Side = "Left" }),
 }
 sections.MainSection1:Header({
-	Name = "Aura V1.5"
+	Name = "Aura"
 })
 sections.MainSection2:Header({
 	Name = "Local Player"
@@ -78,20 +78,18 @@ sections.MainSection1:Slider({
 	end
 }, "Slider")
 sections.MainSection1:Toggle({
-	Name = "Enabled",
+	Name = "Enabled V1.6",
 	Default = false,
 	Callback = function(value)
         getgenv().aura = value
 		while getgenv().aura do
             plr = game.Players.LocalPlayer
             for _, i in pairs(game.Workspace:GetChildren()) do
-                for _, is in pairs(game.Players:GetPlayers()) do
-                    if i.Name == is.Name then
-                        if (game.Workspace[i.Name].Torso.Position - game.Workspace[plr.Name].Torso.Position).Magnitude < Rad and i.isInArena then 
-                            print()
-                            game:GetService("ReplicatedStorage"):FindFirstChild("KSHit"):FireServer(game.Workspace[i.Name]["Torso"])
-                            task.wait(cd)
-                        end
+                if game.Players:FindFirstChild(i.Name) then
+                    if (game.Workspace[i.Name].Torso.Position - game.Workspace[plr.Name].Torso.Position).Magnitude < Rad and i.isInArena and getgenv().aura then 
+                        print()
+                        game:GetService("ReplicatedStorage"):FindFirstChild("KSHit"):FireServer(game.Workspace[i.Name]["Torso"])
+                        task.wait(cd)
                     end
                 end
             end
