@@ -137,15 +137,19 @@ sections.MainSection1:Toggle({
 		while getgenv().aslap and task.wait() and turning == 0 do
             plr = game.Players.LocalPlayer
             for _, i in pairs(game.Workspace:GetChildren()) do
-                if turning == 0 and game.Players:FindFirstChild(i.Name) then
-                    if getgenv().aslap and turning == 0 and workspace[i.Name]:FindFirstChild("isInArena") then
-                        if turning == 0 and workspace[i.Name].isInArena.Value == true then
+                if workspace:FindFirstChild(i.Name) and turning == 0 and game.Players:FindFirstChild(i.Name) then
+                    if workspace:FindFirstChild(i.Name) and getgenv().aslap and turning == 0 and workspace[i.Name]:FindFirstChild("isInArena") then
+                        if workspace:FindFirstChild(i.Name) and turning == 0 and workspace[i.Name].isInArena.Value == true then
                             for post = 0, 5 do
                                 task.wait()
-                                workspace[plr.Name].HumanoidRootPart.CFrame = CFrame.new(workspace[i.Name].HumanoidRootPart.Position)
+                                if workspace:FindFirstChild(i.Name) then
+                                    workspace[plr.Name].HumanoidRootPart.CFrame = CFrame.new(workspace[i.Name].HumanoidRootPart.Position)
+                                end
                             end
                             task.wait(plr:GetNetworkPing() + 0.2)
-                            game:GetService("ReplicatedStorage"):FindFirstChild("GeneralHit"):FireServer(game.Workspace[i.Name]["Torso"])
+                            if workspace:FindFirstChild(i.Name) then
+                                game:GetService("ReplicatedStorage"):FindFirstChild("GeneralHit"):FireServer(game.Workspace[i.Name]["Torso"])
+                            end
                             task.wait(plr:GetNetworkPing() + 0.2)
                             CFrame.new(0, 150, 100)
                         end
