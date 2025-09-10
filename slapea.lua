@@ -117,21 +117,22 @@ sections.MainSection1:Toggle({
 }, "Toggle")
 local turning = 0
 sections.MainSection1:Toggle({
-	Name = "Auto Slaps V2 (Dual Glove)",
+	Name = "Auto Slaps V2.1 (Dual Glove)",
 	Default = false,
 	Callback = function(value)
         getgenv().aslap = value
+        turning = 0
+        if not plr.Character.Humanoid or plr.Character.Humanoid.Health == 0 then
+            turning = 1
+            print(turning)
+        elseif plr.Character.Humanoid and plr.Character.Humanoid.Health == 100 then
+            turning = 0
+            print(turning)
+        end
         for _, i in pairs(game.ReplicatedStorage:GetDescendants()) do
             if i:IsA("RemoteEvent") and string.match(i.Name, "{")then
                 i:FireServer("Dual")
             end
-        end
-    	if plr.Character.Humanoid and plr.Character.Humanoid.Health == 0 then
-            turning = 1
-        elseif plr.Character.Humanoid and plr.Character.Humanoid.Health == 100 then
-            turning = 0
-        elseif not plr.Character.Humanoid then
-            turning = 1
         end
 		while getgenv().aslap and task.wait() and turning == 0 do
             plr = game.Players.LocalPlayer
@@ -150,13 +151,6 @@ sections.MainSection1:Toggle({
                         end
                     end
                 end
-            end
-            if plr.Character.Humanoid and plr.Character.Humanoid.Health == 0 then
-                turning = 1
-            elseif plr.Character.Humanoid and plr.Character.Humanoid.Health == 100 then
-                turning = 0
-            elseif not plr.Character.Humanoid then
-                turning = 1
             end
         end
 	end,
@@ -184,7 +178,7 @@ sections.MainSection2:Toggle({
 	end,
 }, "Toggle")
 sections.MainSection2:Button({
-	Name = "Anti Void",
+	Name = "Remove all Killers (Anti Void + More)",
 	Default = false,
 	Callback = function()
 		local anvoid = Instance.new("Part")
@@ -198,6 +192,10 @@ sections.MainSection2:Button({
 		workspace.DEATHBARRIER:Destroy()
 		task.wait()
 		workspace.DEATHBARRIER2:Destroy()
+		task.wait()
+		workspace.Arena.CubeOfDeathArea["the cube of death(i heard it kills)"]:Destroy()
+		task.wait()
+		workspace.AntiDefaultArena:Destroy()
 	end,
 }, "Toggle")
 sections.MainSection4:Toggle({
@@ -217,7 +215,7 @@ sections.MainSection5:Slider({
 	Name = "Walk Speed",
 	Default = 20,
 	Minimum = 1,
-	Maximum = 200,
+	Maximum = 400,
 	DisplayMethod = "Speed",
 	Precision = 0,
 	Callback = function(Value)
@@ -229,7 +227,7 @@ sections.MainSection5:Slider({
 	Name = "Jump Boost",
 	Default = 20,
 	Minimum = 1,
-	Maximum = 250,
+	Maximum = 500,
 	DisplayMethod = "Jump",
 	Precision = 0,
 	Callback = function(Value)
