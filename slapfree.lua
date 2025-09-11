@@ -117,10 +117,10 @@ sections.MainSection1:Toggle({
 	end,
 }, "Toggle")
 sections.MainSection1:Toggle({
-	Name = "Auto Slaps V1 [Pending Fix]",
+	Name = "Auto Slaps V# [Exclusively in Early Access(for now)]",
 	Default = false,
 	Callback = function(value)
-        print("Pending Fix")
+        print("in early access...")
 	end,
 }, "Toggle")
 local prevpos = nil
