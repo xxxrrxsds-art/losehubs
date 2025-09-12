@@ -296,8 +296,21 @@ sections.MainSection11:Toggle({
 	Default = false,
 	Callback = function(value)
         getgenv().fhj = value
-		while task.wait(4) and getgenv().fhj do
+		while getgenv().fhj do
             game:GetService("ReplicatedStorage"):WaitForChild("Hallow"):FireServer()
+            task.wait(4)
+        end
+	end,
+}, "Toggle")
+sections.MainSection11:Toggle({
+	Name = "Fast bus(requires bus)",
+	Default = false,
+	Callback = function(value)
+        getgenv().fbs = value
+        task.wait(4)
+		while getgenv().fbs do
+            game:GetService("ReplicatedStorage"):WaitForChild("busmoment"):FireServer()
+            task.wait(6)
         end
 	end,
 }, "Toggle")
