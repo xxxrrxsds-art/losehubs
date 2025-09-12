@@ -117,7 +117,7 @@ sections.MainSection1:Toggle({
 }, "Toggle")
 local turning = 0
 sections.MainSection1:Toggle({
-	Name = "Auto Slaps V2.1 (Dual Glove)",
+	Name = "Auto Slaps V2.2 (Dual Glove)",
 	Default = false,
 	Callback = function(value)
         getgenv().aslap = value
@@ -138,8 +138,8 @@ sections.MainSection1:Toggle({
             plr = game.Players.LocalPlayer
             for _, i in pairs(game.Workspace:GetChildren()) do
                 if workspace:FindFirstChild(i.Name) and turning == 0 and game.Players:FindFirstChild(i.Name) then
-                    if workspace:FindFirstChild(i.Name) and getgenv().aslap and turning == 0 and workspace[i.Name]:FindFirstChild("isInArena") then
-                        if workspace:FindFirstChild(i.Name) and turning == 0 and workspace[i.Name].isInArena.Value == true then
+                    if workspace:FindFirstChild(i.Name) and getgenv().aslap and turning == 0 and workspace[i.Name]:FindFirstChild("isInArena") and workspace[i.Name]:FindFirstChildOfClass("Humanoid") then
+                        if workspace:FindFirstChild(i.Name) and turning == 0 and workspace[i.Name].isInArena.Value == true and workspace[i.Name]:FindFirstChildOfClass("Humanoid").Name == "Humanoid" then
                             for post = 0, 5 do
                                 task.wait()
                                 if workspace:FindFirstChild(i.Name) then
