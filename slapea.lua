@@ -46,7 +46,7 @@ sections.MainSection10:Header({
 	Name = "Admin"
 })
 sections.MainSection11:Header({
-	Name = "One Ability"
+	Name = "One Ability(requires glove)"
 })
 
 local plr = game.Players.LocalPlayer
@@ -282,7 +282,7 @@ sections.MainSection10:Toggle({
 	end,
 }, "Toggle")
 sections.MainSection11:Toggle({
-	Name = "Fast Bricks(requires equipped brick glove)",
+	Name = "Fast Bricks",
 	Default = false,
 	Callback = function(value)
         getgenv().fbr = value
@@ -292,7 +292,7 @@ sections.MainSection11:Toggle({
 	end,
 }, "Toggle")
 sections.MainSection11:Toggle({
-	Name = "Fast Hallow Jack(requires equipped hallow jack glove)",
+	Name = "Fast Hallow Jack",
 	Default = false,
 	Callback = function(value)
         getgenv().fhj = value
@@ -303,7 +303,7 @@ sections.MainSection11:Toggle({
 	end,
 }, "Toggle")
 sections.MainSection11:Toggle({
-	Name = "Fast bus(requires bus)",
+	Name = "Fast bus",
 	Default = false,
 	Callback = function(value)
         getgenv().fbs = value
