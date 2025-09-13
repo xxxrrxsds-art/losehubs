@@ -265,15 +265,9 @@ sections.MainSection9:Button({
 		end
 	end,
 })
-if tostring(getgenv().invitecode) ~= "nil" then
-    sections.MainSection8:Label({
-        Text = "Build: Free"
-    })
-else 
-    sections.MainSection8:Label({
-        Text = "Build: Source/Dev"
-    })
-end
+sections.MainSection8:Label({
+    Text = "Version: Free"
+})
 sections.MainSection8:Label({
 	Text = "Our Discord: discord.gg/XAqn48p6Jm"
 })
