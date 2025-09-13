@@ -334,9 +334,6 @@ sections.MainSection9:Button({
 })
 if tostring(getgenv().invitecode) ~= "nil" then
     sections.MainSection8:Label({
-        Text = "Key used: ".. tostring(getgenv().invitecode)
-    })
-    sections.MainSection8:Label({
         Text = "Build: Early Access"
     })
 else 
