@@ -13,7 +13,7 @@ local tabGroups = {
 	TabGroup1 = Window:TabGroup()
 }
 local tabs = {
-	AC = tabGroups.TabGroup1:Tab({ Name = "Anti-Cheat Resistance"}),
+	AC = tabGroups.TabGroup1:Tab({ Name = "Anti-Cheat Bypass"}),
 	Oth = tabGroups.TabGroup1:Tab({ Name = "Other"}),
 }
 local sections = {
@@ -25,7 +25,7 @@ sections.MainSection1:Header({
 	Name = "Main"
 })
 sections.MainSection1:Button({
-	Name = "Teleport Resistance V1 (Reset to turn off)",
+	Name = "Teleport Bypass V1 (Reset to turn off)",
 	Callback = function()
 		local plr = game.Players.LocalPlayer
         local antitp = true
