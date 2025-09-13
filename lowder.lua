@@ -37,6 +37,10 @@ Section:NewButton("Load", "Activate", function()
             loadstring(game:HttpGet("https://raw.githubusercontent.com/xxxrrxsds-art/losehubs/refs/heads/main/ksonly.lua"))()
         elseif game.placeId == 124596094333302 then
             loadstring(game:HttpGet("https://raw.githubusercontent.com/xxxrrxsds-art/losehubs/refs/heads/main/slapea.lua"))()
+		elseif game.placeId == 963442491571673 then
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/xxxrrxsds-art/losehubs/refs/heads/main/stealabrain.lua"))()
+		elseif game.placeId == 109983668079237 then
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/xxxrrxsds-art/losehubs/refs/heads/main/stealabrain.lua"))()
         end
          
     else
