@@ -561,10 +561,6 @@ sections.MainSection15:Button({
 sections.MainSection8:Label({
     Text = "Version: Free"
 })
-    sections.MainSection8:Label({
-        Text = "Build: Source/Dev"
-    })
-end
 sections.MainSection8:Label({
 	Text = "Our Discord: discord.gg/XAqn48p6Jm"
 })
