@@ -179,15 +179,9 @@ sections.MainSection5:Toggle({
         end
 	end,
 }, "Toggle")
-if tostring(getgenv().invitecode) ~= "nil" then
-    sections.MainSection8:Label({
-        Text = "Build: Early Access"
-    })
-else 
-    sections.MainSection8:Label({
-        Text = "Build: Source/Dev"
-    })
-end
+sections.MainSection8:Label({
+    Text = "Version: Early Access"
+})
 sections.MainSection8:Label({
 	Text = "Our Discord: discord.gg/XAqn48p6Jm"
 })
