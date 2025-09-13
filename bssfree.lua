@@ -558,14 +558,9 @@ sections.MainSection15:Button({
         game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("ToyEvent"):FireServer("Field Booster")
     end,
 }) 
-if tostring(getgenv().invitecode) ~= "nil" then
-    sections.MainSection8:Label({
-        Text = "Key used: ".. tostring(getgenv().invitecode)
-    })
-    sections.MainSection8:Label({
-        Text = "Build: Free"
-    })
-else 
+sections.MainSection8:Label({
+    Text = "Version: Free"
+})
     sections.MainSection8:Label({
         Text = "Build: Source/Dev"
     })
