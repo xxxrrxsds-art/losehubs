@@ -24,28 +24,32 @@ local sections = {
 sections.MainSection1:Header({
 	Name = "Main"
 })
-sections.MainSection1:Button({
-	Name = "Teleport Bypass V1 (Reset to turn off)",
-	Callback = function()
+sections.MainSection1:Toggle({
+	Name = "Teleport Bypass V1 [DETECTED]",
+	Default = false,
+	Callback = function(value)
 		local plr = game.Players.LocalPlayer
         local antitp = true
         local prevatp = nil
         local newpos = nil
+        getgenv().bypas = value
         atp = true
-		plr.Character.PrimaryPart:GetPropertyChangedSignal("Position"):Connect(function()
-            atp = false
-            print(prevatp)
-            print(atp)
-            plr.Character.PrimaryPart.CFrame = CFrame.new(prevatp)
-            atp = true
-            task.wait()
-        end)
+        if getgenv().bypas then
+    		plr.Character.PrimaryPart:GetPropertyChangedSignal("Position"):Connect(function()
+                atp = false
+                print(prevatp)
+                print(atp)
+                plr.Character.PrimaryPart.CFrame = CFrame.new(prevatp)
+                atp = true
+                task.wait()
+    		end)
+        end
         
-        while atp and task.wait() do
+        while atp and task.wait() and getgenv().bypas do
             prevatp = plr.Character.PrimaryPart.Position
         end
 	end,
-})
+}, "Toggle")
 sections.MainSection2:Button({
 	Name = "Remove Laser Collision",
 	Callback = function()
