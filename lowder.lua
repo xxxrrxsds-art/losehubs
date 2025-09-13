@@ -5,12 +5,12 @@ local Window = Library.CreateLib("execsense loader", "DarkTheme")
 local Tab = Window:NewTab("Main")
 local Section = Tab:NewSection("Key System")
 Section:NewTextBox("Key", "Enter the key", function(txt)
-	getgenv().invitecode = txt
+	invitecode = txt
 end)
 
 local status = Section:NewLabel("Waiting...")
 Section:NewButton("Load", "Activate", function()
-    if getgenv().invitecode == "useexecfree" then
+    if invitecode == "useexecfree" then
         status:UpdateLabel("Loading...")
         if game.placeId == 4924922222 then
             loadstring(game:HttpGet("https://raw.githubusercontent.com/xxxrrxsds-art/losehubs/refs/heads/main/brbrhaven.lua"))()
@@ -25,7 +25,7 @@ Section:NewButton("Load", "Activate", function()
         else
             game.Players.LocalPlayer:Kick("Invalid Game.")
         end
-    elseif getgenv().invitecode == currentkey then
+    elseif invitecode == currentkey then
         status:UpdateLabel("Loading...")
         if game.placeId == 4924922222 then
             loadstring(game:HttpGet("https://raw.githubusercontent.com/xxxrrxsds-art/losehubs/refs/heads/main/brbrhaven.lua"))()
