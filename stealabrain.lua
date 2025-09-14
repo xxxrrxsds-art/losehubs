@@ -1,6 +1,6 @@
 local MacLib = loadstring(game:HttpGet("https://github.com/biggaboy212/Maclib/releases/latest/download/maclib.txt"))()
 local Window = MacLib:Window({
-	Title = "execsense",
+	Title = "stopped",
 	Subtitle = "Steal a Brainrot: Early Beta V1.1",
 	Size = UDim2.fromOffset(868, 650),
 	DragStyle = 1,
