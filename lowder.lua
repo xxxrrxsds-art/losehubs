@@ -1,6 +1,6 @@
 local MacLib = loadstring(game:HttpGet("https://github.com/biggaboy212/Maclib/releases/latest/download/maclib.txt"))()
 local Window = MacLib:Window({
-	Title = "execsense loader",
+	Title = "stopped",
 	Subtitle = "The Newest Loader",
 	Size = UDim2.fromOffset(650, 520),
 	DragStyle = 1,
