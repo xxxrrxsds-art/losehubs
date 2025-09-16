@@ -7,6 +7,10 @@ local infinite = false
 local god = false
 local ns = false
 local spr = nil
+local rapid = false
+Section:NewToggle("Rapid Fire", "working with Auto Fire only", function(state)
+    rapid = state
+end)
 Section:NewToggle("Endless Ammo", "working with Auto Fire only", function(state)
     infinite = state
 end)
@@ -14,11 +18,18 @@ Section2:NewToggle("God Mode", "working with Auto Fire only", function(state)
     god = true
 end)
 local needed = nil
+local cd = false
 Section:NewToggle("Auto Fire", "Through walls - Always On", function(state)
     getgenv().afire = state
     
     if getgenv().afire then
         needed = game.Players.LocalPlayer.team.Value  
+        
+        if rapid then
+            cd = 0.0001
+        else
+            cd = 0.25
+        end
     end
     
     while getgenv().afire and task.wait() do
@@ -53,7 +64,7 @@ Section:NewToggle("Auto Fire", "Through walls - Always On", function(state)
                     	}
                     }
                     game:GetService("ReplicatedStorage"):WaitForChild("remote"):WaitForChild("firing"):WaitForChild("fire"):FireServer(unpack(args))
-                    task.wait(0.1)
+                    task.wait(cd)
                 end
             end
         end
